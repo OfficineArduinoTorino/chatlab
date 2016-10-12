@@ -1,0 +1,4 @@
+#!/bin/sh
+
+. /var/www/labadmin/venv/bin/activate
+/var/www/labadmin/labadmin/manage.py runserver 0.0.0.0:8888
