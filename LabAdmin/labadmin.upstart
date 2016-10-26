@@ -1,0 +1,14 @@
+description     "labadmin"
+
+start on runlevel [345]
+stop on runlevel [!2345]
+
+respawn
+setuid labadmin
+setgid labadmin
+chdir /var/www/labadmin
+
+script
+    set -x
+    exec /var/www/labadmin/bin/labadmin
+end script

@@ -1,0 +1,9 @@
+- name: RocketChat.Server
+  hosts: default
+  remote_user: vagrant
+  sudo: true
+  vars:
+    rocket_chat_automatic_upgrades: false
+    rocket_chat_tarball_sha256sum: f6d1e6897b28a9b722b66ed199c199ed608d565b4d7a4a1d900425ad68cb5bba.
+  roles:
+    - RocketChat.Server
