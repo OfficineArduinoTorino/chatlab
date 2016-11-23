@@ -76,11 +76,15 @@ Connect to the virtual machine:
 vagrant ssh
 ```
 
+
+
 From inside the virtual machine we are going to install all requirements.
 Please note that *mysql-server* will require a password for the root user that you'll need later.
 
 ```
-sudo apt install build-essential python3 python3-dev python-virtualenv libjpeg-dev libpq-dev libmysqlclient-dev git python2.7 mysql-server
+sudo add-apt-repository ppa:fkrull/deadsnakes
+sudo apt-get update
+sudo apt install build-essential python3.4 python3.4-dev python-virtualenv libjpeg-dev libpq-dev libmysqlclient-dev git python2.7 mysql-server
 sudo apt-get clean
 ```
 
@@ -104,7 +108,7 @@ Then we need to create a user that will run the *LabAdmin* application:
 
 ```
 sudo useradd -M labadmin
-sudo mkdir /var/www/labadmin
+sudo mkdir -p /var/www/labadmin
 sudo chown labadmin /var/www/labadmin
 cd /var/www/labadmin
 ```
@@ -175,7 +179,8 @@ STATIC_URL = '/labadmin/static/'
 LOGIN_URL = '/labadmin/accounts/login/'
 ```
 
-You also need to update these settings dependings on your environment:
+You also need to 
+these settings dependings on your environment:
 
 ```
 # See https://docs.djangoproject.com/en/1.10/ref/settings/#databases
