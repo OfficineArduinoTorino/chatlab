@@ -10,9 +10,13 @@ You need a checkout of this repository on your machine.
 
 Requirements:
 - ansible 2.0+
+- git
+
+Optional whether using a virtual machine:
+
 - vagrant
 - a vagrant provider, *virtualbox* is the more hassle free
-- git
+
 
 ## Rocket.Chat
 
@@ -23,6 +27,12 @@ From the dir containing the checkout of this repository:
 
 ```
 ansible-galaxy install -r chatlab/ansible/requirements.yml -p chatlab/ansible/roles
+```
+
+If not using Vagrant, run this:
+
+```
+absible-playbook "chatlab/ansible/rocket_chat.yml"
 ```
 
 Let's start with a simple vagrant file:
@@ -70,7 +80,7 @@ From inside the virtual machine we are going to install all requirements.
 Please note that *mysql-server* will require a password for the root user that you'll need later.
 
 ```
-sudo apt install build-essential python3.4 python3.4-dev python-virtualenv libjpeg-dev libpq-dev libmysqlclient-dev git python2.7 mysql-server
+sudo apt install build-essential python3 python3-dev python-virtualenv libjpeg-dev libpq-dev libmysqlclient-dev git python2.7 mysql-server
 sudo apt-get clean
 ```
 
